@@ -1,4 +1,4 @@
-package mused
+package main
 
 import (
 	"encoding/json"
