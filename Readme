@@ -1,9 +1,0 @@
-1、make build-linux
-2、docker build -t tygeth/muse:latest .
-3、docker login
-4、docker push tygeth/muse:latest
-创世启动4个节点
-5、make localnet-start
-更新可执行程序，只需要重新编译并重启节点:
-make build-linux localnet-start
-
