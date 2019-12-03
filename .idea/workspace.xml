@@ -1,27 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="42a36b93-ae28-461b-be0c-c53571158ea6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Makefile.tool" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Readme" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/script0.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/script1.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/script2.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/script3.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmd/mused/testnet.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/x/muse/client/rest/query.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/x/muse/client/rest/rest.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/x/muse/client/rest/tx.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.go" beforeDir="false" afterPath="$PROJECT_DIR$/app.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/mused/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/mused/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-    </list>
+    <list default="true" id="42a36b93-ae28-461b-be0c-c53571158ea6" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,13 +73,18 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Makefile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="103" column="182" selection-start-line="103" selection-start-column="177" selection-end-line="103" selection-end-column="182" />
+            <state relative-caret-position="197">
+              <caret line="100" lean-forward="true" selection-start-line="100" selection-end-line="100" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -340,6 +325,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.6028939" visible="true" weight="0.17596567" />
@@ -370,13 +356,6 @@
     <proxy>https://goproxy.cn</proxy>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Makefile.tool">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1095">
-          <caret line="73" column="29" selection-start-line="73" selection-start-column="29" selection-end-line="73" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../go/pkg/mod/github.com/cosmos/cosmos-sdk@v0.37.4/types/config.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2070">
@@ -696,10 +675,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Makefile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="103" column="182" selection-start-line="103" selection-start-column="177" selection-end-line="103" selection-end-column="182" />
+        <state relative-caret-position="197">
+          <caret line="100" lean-forward="true" selection-start-line="100" selection-end-line="100" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
