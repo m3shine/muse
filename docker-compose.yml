@@ -1,0 +1,67 @@
+version: '3'
+
+services:
+  musednode0:
+    container_name: musednode0
+    image: "tygeth/muse:latest"
+    ports:
+      - "26656-26657:26656-26657"
+    environment:
+      - ID=0
+      - LOG=${LOG:-mused.log}
+    volumes:
+      - ./build/node0:/root:Z
+    networks:
+      localnet:
+        ipv4_address: 192.168.10.2
+
+  musednode1:
+    container_name: musednode1
+    image: "tygeth/muse:latest"
+    ports:
+      - "26658-26659:26656-26657"
+    environment:
+      - ID=1
+      - LOG=${LOG:-mused.log}
+    volumes:
+      - ./build/node1:/root:Z
+    networks:
+      localnet:
+        ipv4_address: 192.168.10.3
+
+  musednode2:
+    container_name: musednode2
+    image: "tygeth/muse:latest"
+    ports:
+      - "26660-26661:26656-26657"
+    environment:
+      - ID=2
+      - LOG=${LOG:-mused.log}
+    volumes:
+      - ./build/node2:/root:Z
+    networks:
+      localnet:
+        ipv4_address: 192.168.10.4
+
+  musednode3:
+    container_name: musednode3
+    image: "tygeth/muse:latest"
+    ports:
+      - "26662-26663:26656-26657"
+    environment:
+      - ID=3
+      - LOG=${LOG:-mused.log}
+    volumes:
+      - ./build/node3:/root:Z
+    networks:
+      localnet:
+        ipv4_address: 192.168.10.5
+
+networks:
+  localnet:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        -
+          subnet: 192.168.10.0/16

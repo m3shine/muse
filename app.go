@@ -30,9 +30,9 @@ import (
 const appName = "muse"
 
 var (
-	DefaultCLIHome = os.ExpandEnv("$HOME/.musecli")
+	DefaultCLIHome = os.ExpandEnv("$HOME/musecli")
 
-	DefaultNodeHome = os.ExpandEnv("$HOME/.mused")
+	DefaultNodeHome = os.ExpandEnv("$HOME/mused")
 
 	ModuleBasics = module.NewBasicManager(
 		genaccounts.AppModuleBasic{},
