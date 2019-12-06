@@ -13,11 +13,12 @@
 #    make install
 
 FROM alpine:edge
-WORKDIR /
+WORKDIR /root
 COPY ./build/mused /usr/bin/mused
 COPY ./build/musecli /usr/bin/musecli
 #SHELL ["#!/bin/sh"]
-CMD ["mused","start"]
+CMD ["mused", "start"]
+
 
 # sed -i '.bak' "s/persistent_peers = .*/persistent_peers = 'id@first_node_ip:26656'/g" ~/.mused/config/config.toml
 # run "musecli status" on first node to get id.

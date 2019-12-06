@@ -27,15 +27,16 @@ func GetTxCmd(storeKey string, cdc *codec.Codec) *cobra.Command {
 	return museTxCmd
 }
 
+//交易from为owner，owner不作为命令入参
 func GetCmdSetLyric(cdc *codec.Codec) *cobra.Command {
 	return &cobra.Command{
-		Use: "set-lyric [lyricCode] [author] [title] [hash] [owner] [tokenName]",
+		Use: "set-lyric [lyricCode] [author] [title] [hash] [tokenName]",
 		Short: "set the lyric that you own",
-		Args:  cobra.ExactArgs(6),
+		Args:  cobra.ExactArgs(5),
 		RunE: func(cmd *cobra.Command, args []string) error {
 			cliCtx := context.NewCLIContext().WithCodec(cdc)
 			txBldr := auth.NewTxBuilderFromCLI().WithTxEncoder(utils.GetTxEncoder(cdc))
-			msg := types.NewMsgSetLyric(args[0], args[1], args[2], []byte(args[3]),  cliCtx.GetFromAddress(), sdk.Coins{sdk.NewInt64Coin(args[5], types.TokenAmount)})
+			msg := types.NewMsgSetLyric(args[0], args[1], args[2], []byte(args[3]),  cliCtx.GetFromAddress(), sdk.Coins{sdk.NewInt64Coin(args[4], types.TokenAmount)})
 			err := msg.ValidateBasic()
 			if err != nil {
 				return err

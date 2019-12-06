@@ -8,17 +8,16 @@ import (
 	"net/http"
 )
 
-func lyricHandler(cliCtx context.CLIContext, lyricCode string) http.HandlerFunc {
+func lyricHandler(cliCtx context.CLIContext, storeName string) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		vars := mux.Vars(r)
-		paramType := vars[restName]
+		paramType := vars[restLyricCode]
 
-		res, _, err := cliCtx.QueryWithData(fmt.Sprintf("custom/%s/resolve/%s", lyricCode, paramType), nil)
+		res, _, err := cliCtx.QueryWithData(fmt.Sprintf("custom/%s/lyric/%s", storeName, paramType), nil)
 		if err != nil {
 			rest.WriteErrorResponse(w, http.StatusNotFound, err.Error())
 			return
 		}
-
 		rest.PostProcessResponse(w, cliCtx, res)
 	}
 }

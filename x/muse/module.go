@@ -8,6 +8,7 @@ import (
 	"github.com/gorilla/mux"
 	"github.com/spf13/cobra"
 	"muse/x/muse/client/cli"
+	"muse/x/muse/client/rest"
 	"muse/x/muse/keeper"
 	"muse/x/muse/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
@@ -40,7 +41,7 @@ func (AppModuleBasic) ValidateGenesis(bz json.RawMessage) error {
 }
 // Register rest routes
 func (AppModuleBasic) RegisterRESTRoutes(ctx context.CLIContext, rtr *mux.Router) {
-	//rest.RegisterRoutes(ctx, rtr, types.StoreKey)
+	rest.RegisterRoutes(ctx, rtr, types.StoreKey)
 }
 
 // Get the root query command of this module

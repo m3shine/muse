@@ -4,13 +4,15 @@ services:
   musednode0:
     container_name: musednode0
     image: "tygeth/muse:latest"
+    command: cat /root/.mused/config/genesis.json
     ports:
       - "26656-26657:26656-26657"
     environment:
       - ID=0
       - LOG=${LOG:-mused.log}
     volumes:
-      - ./build/node0:/root:Z
+      - ./build/node0/mused:/root/.mused:Z
+      - ./build/gentxs:/root/.mused/config/gentx
     networks:
       localnet:
         ipv4_address: 192.168.10.2
@@ -24,7 +26,8 @@ services:
       - ID=1
       - LOG=${LOG:-mused.log}
     volumes:
-      - ./build/node1:/root:Z
+      - ./build/node1/mused:/root/.mused:Z
+      - ./build/gentxs:/root/.mused/config/gentx
     networks:
       localnet:
         ipv4_address: 192.168.10.3
@@ -38,7 +41,8 @@ services:
       - ID=2
       - LOG=${LOG:-mused.log}
     volumes:
-      - ./build/node2:/root:Z
+      - ./build/node2/mused:/root/.mused:Z
+      - ./build/gentxs:/root/.mused/config/gentx
     networks:
       localnet:
         ipv4_address: 192.168.10.4
@@ -52,7 +56,8 @@ services:
       - ID=3
       - LOG=${LOG:-mused.log}
     volumes:
-      - ./build/node3:/root:Z
+      - ./build/node3/mused:/root/.mused:Z
+      - ./build/gentxs:/root/.mused/config/gentx
     networks:
       localnet:
         ipv4_address: 192.168.10.5

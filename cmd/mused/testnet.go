@@ -120,10 +120,10 @@ func InitTestnet(cmd *cobra.Command, config *tmconfig.Config, cdc *codec.Codec,
 
 	// generate private keys, node IDs, and initial transactions
 	for i := 0; i < numValidators; i++ {
-		nodeDirName := fmt.Sprintf("%s%d", nodeDirPrefix, i)
-		nodeDir := filepath.Join(outputDir, nodeDirName, nodeDaemonHome)
-		clientDir := filepath.Join(outputDir, nodeDirName, nodeCLIHome)
-		gentxsDir := filepath.Join(outputDir, "gentxs")
+		nodeDirName := fmt.Sprintf("%s%d", nodeDirPrefix, i) //nodei
+		nodeDir := filepath.Join(outputDir, nodeDirName, nodeDaemonHome) //output：makefile里暂定义为/output。/output/nodei/mused
+		clientDir := filepath.Join(outputDir, nodeDirName, nodeCLIHome) // /output/nodei/nodecli
+		gentxsDir := filepath.Join(outputDir, "gentxs") //output/gentxs
 
 		config.SetRoot(nodeDir)
 		config.RPC.ListenAddress = "tcp://0.0.0.0:26657"

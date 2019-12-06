@@ -6,12 +6,12 @@ import (
 	"github.com/cosmos/cosmos-sdk/codec"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/module"
+	"github.com/cosmos/cosmos-sdk/version"
 	"github.com/cosmos/cosmos-sdk/x/auth"
 	"github.com/cosmos/cosmos-sdk/x/bank"
 	distr "github.com/cosmos/cosmos-sdk/x/distribution"
 	"github.com/cosmos/cosmos-sdk/x/genaccounts"
 	"github.com/cosmos/cosmos-sdk/x/genutil"
-	"github.com/cosmos/cosmos-sdk/version"
 	"github.com/cosmos/cosmos-sdk/x/params"
 	"github.com/cosmos/cosmos-sdk/x/slashing"
 	"github.com/cosmos/cosmos-sdk/x/staking"
@@ -30,9 +30,9 @@ import (
 const appName = "muse"
 
 var (
-	DefaultCLIHome = os.ExpandEnv("$HOME/musecli")
+	DefaultCLIHome = os.ExpandEnv("$HOME/.musecli")
 
-	DefaultNodeHome = os.ExpandEnv("$HOME/mused")
+	DefaultNodeHome = os.ExpandEnv("$HOME/.mused")
 
 	ModuleBasics = module.NewBasicManager(
 		genaccounts.AppModuleBasic{},

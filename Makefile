@@ -101,7 +101,7 @@ test:
 
 # Run a 4-node testnet locally
 localnet-start: build-linux localnet-stop
-	@if ! [ -f build/node0/mused/config/genesis.json ]; then docker run -e COSMOS_SDK_TEST_KEYRING=y --rm -v $(CURDIR)/build:/mused:Z tygeth/muse:latest mused testnet --v 4 -o /mused --starting-ip-address 192.168.10.2 --chain-id musechain ; fi
+	@if ! [ -f build/node0/mused/config/genesis.json ]; then docker run --rm -v $(CURDIR)/build:/output:Z tygeth/muse:latest mused testnet --v 4 -o /output --starting-ip-address 192.168.10.2 --chain-id musechain ; fi
 	docker-compose up
 
 # Stop testnet

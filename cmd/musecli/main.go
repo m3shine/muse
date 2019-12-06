@@ -57,7 +57,7 @@ func main() {
 		client.NewCompletionCmd(rootCmd, true),
 	)
 
-	executor := cli.PrepareMainCmd(rootCmd, "NS", muse.DefaultCLIHome)
+	executor := cli.PrepareMainCmd(rootCmd, "MU", muse.DefaultCLIHome)
 	err := executor.Execute()
 	if err != nil {
 		panic(err)
