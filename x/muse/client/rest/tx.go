@@ -64,8 +64,22 @@ func setLyricHandler(cliCtx context.CLIContext) http.HandlerFunc {
 }
 
 /**
-curl -XPUT -s http://localhost:1317/muse/lyric --data-binary '{"req":{"base_req":{"from":"cosmos193jutxkx74xx8yaufcx9pcp3cwd90nwsegklpa","chain_id":"musenetwork"},"sign":{"from_name":"jon","password":"9ijn8uhb"}},"lyric_code":"d0911","author":"jon","title":"helloworld","hash":"333333333333333333333333","token_name":"hwtoken"}'
- */
+curl -XPUT -s http://localhost:1317/muse/lyric --data-binary '{"req":{"base_req":{"from":"cosmos193jutxkx74xx8yaufcx9pcp3cwd90nwsegklpa","chain_id":"musenetwork","gas":"auto","memo":"how hard"},"sign":{"from_name":"name","password":"password"}},"lyric_code":"d0911","author":"jon","title":"helloworld","hash":"333333333333333333333333","token_name":"hwtoken"}'
+*/
+
+
+//return [sync]
+//success
+//{"height":"0","txhash":"4224962F1A55B3D27B03A89B1FB4022C7DAD0F985FE15E014573B0BFC8A17F42","raw_log":"[{\"msg_index\":0,\"success\":true,\"log\":\"\",\"events\":[{\"type\":\"message\",\"attributes\":[{\"key\":\"action\",\"value\":\"set_lyric\"}]}]}]","logs":[{"msg_index":0,"success":true,"log":"","events":[{"type":"message","attributes":[{"key":"action","value":"set_lyric"}]}]}]}
+//error
+//{"height":"0","txhash":"8B41A79B1CED9CF238C4BDC2328369D44A57F3A60D226B166F8F8D5C8D49CD23","code":4,"raw_log":"{\"codespace\":\"sdk\",\"code\":4,\"message\":\"signature verification failed; verify correct account sequence and chain-id\"}"}
+
+//return [async]
+//success
+//{"height":"0","txhash":"F648CAD239F3BC30614495F78FAFD8494A1787322FD295CCC8EFD17DA96F5879"}
+//error
+//{"error":"invalid account password"}
+
 func sendTx( w http.ResponseWriter,cliCtx context.CLIContext, br rest.BaseReq, sign Sign, msgs []sdk.Msg) {
 
 	gasAdj, ok := rest.ParseFloat64OrReturnBadRequest(w, br.GasAdjustment, flags.DefaultGasAdjustment)
@@ -135,7 +149,7 @@ func sendTx( w http.ResponseWriter,cliCtx context.CLIContext, br rest.BaseReq, s
 	}
 
 	// broadcast to a Tendermint node
-	txRes, err := cliCtx.BroadcastTxCommit(txBytes)
+	txRes, err := cliCtx.BroadcastTxAsync(txBytes)
 
 	output, err := cliCtx.Codec.MarshalJSON(txRes)
 	if err != nil {
@@ -147,8 +161,5 @@ func sendTx( w http.ResponseWriter,cliCtx context.CLIContext, br rest.BaseReq, s
 	if _, err := w.Write(output); err != nil {
 		log.Printf("could not write response: %v", err)
 	}
-	//success
-	//{"height":"0","txhash":"4224962F1A55B3D27B03A89B1FB4022C7DAD0F985FE15E014573B0BFC8A17F42","raw_log":"[{\"msg_index\":0,\"success\":true,\"log\":\"\",\"events\":[{\"type\":\"message\",\"attributes\":[{\"key\":\"action\",\"value\":\"set_lyric\"}]}]}]","logs":[{"msg_index":0,"success":true,"log":"","events":[{"type":"message","attributes":[{"key":"action","value":"set_lyric"}]}]}]}
-	//error
-	//{"height":"0","txhash":"8B41A79B1CED9CF238C4BDC2328369D44A57F3A60D226B166F8F8D5C8D49CD23","code":4,"raw_log":"{\"codespace\":\"sdk\",\"code\":4,\"message\":\"signature verification failed; verify correct account sequence and chain-id\"}"}
+
 }
