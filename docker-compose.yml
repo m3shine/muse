@@ -3,7 +3,7 @@ version: '3'
 services:
   musednode0:
     container_name: musednode0
-    image: "tygeth/muse:latest"
+    image: "tygeth/copy:latest"
     command: cat /root/.mused/config/genesis.json
     ports:
       - "26656-26657:26656-26657"
@@ -19,7 +19,7 @@ services:
 
   musednode1:
     container_name: musednode1
-    image: "tygeth/muse:latest"
+    image: "tygeth/copy:latest"
     ports:
       - "26658-26659:26656-26657"
     environment:
@@ -34,7 +34,7 @@ services:
 
   musednode2:
     container_name: musednode2
-    image: "tygeth/muse:latest"
+    image: "tygeth/copy:latest"
     ports:
       - "26660-26661:26656-26657"
     environment:
@@ -49,7 +49,7 @@ services:
 
   musednode3:
     container_name: musednode3
-    image: "tygeth/muse:latest"
+    image: "tygeth/copy:latest"
     ports:
       - "26662-26663:26656-26657"
     environment:

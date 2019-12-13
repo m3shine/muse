@@ -21,9 +21,9 @@ import (
 	"github.com/tendermint/tendermint/libs/log"
 	tmtypes "github.com/tendermint/tendermint/types"
 	dbm "github.com/tendermint/tm-db"
-	"muse/x/muse"
-	"muse/x/muse/keeper"
-	"muse/x/muse/types"
+	"muse/x/copy"
+	"muse/x/copy/keeper"
+	"muse/x/copy/types"
 	"os"
 )
 

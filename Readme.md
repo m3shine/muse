@@ -4,7 +4,8 @@
 make install
 
 # Initialize configuration files and genesis file
-mused init --chain-id musenetwork
+# moniker is the name of your node
+mused init <moniker> --chain-id musenetwork
 
 # Copy the `Address` output here and save it for later use 
 # [optional] add "--ledger" at the end to use a Ledger Nano S 

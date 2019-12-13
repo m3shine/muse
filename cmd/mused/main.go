@@ -61,10 +61,6 @@ func main() {
 	}
 }
 
-
-
-
-
 func newApp(logger log.Logger, db dbm.DB, traceStore io.Writer) abci.Application {
 	return app.NewMuseApp(logger, db)
 }

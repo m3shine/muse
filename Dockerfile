@@ -1,7 +1,7 @@
 
 #FROM golang:alpine AS build-env
 #ENV PACKAGES make gcc bash
-#WORKDIR /go/src/muse
+#WORKDIR /go/src/copy
 #COPY . .
 #RUN mkdir -p $HOME/go/bin && \
 #    echo "export GOPATH=$HOME/go" >> ~/.bash_profile && \

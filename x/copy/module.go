@@ -7,10 +7,10 @@ import (
 	"github.com/cosmos/cosmos-sdk/x/bank"
 	"github.com/gorilla/mux"
 	"github.com/spf13/cobra"
-	"muse/x/muse/client/cli"
-	"muse/x/muse/client/rest"
-	"muse/x/muse/keeper"
-	"muse/x/muse/types"
+	"muse/x/copy/client/cli"
+	"muse/x/copy/client/rest"
+	"muse/x/copy/keeper"
+	"muse/x/copy/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	abci "github.com/tendermint/tendermint/abci/types"
 )
@@ -84,7 +84,7 @@ func (am AppModule) NewHandler() sdk.Handler {
 	return NewHandler(am.keeper)
 }
 func (am AppModule) QuerierRoute() string {
-	return types.ModuleName
+	return types.RouterKey
 }
 
 func (am AppModule) NewQuerierHandler() sdk.Querier {

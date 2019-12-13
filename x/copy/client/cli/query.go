@@ -5,13 +5,13 @@ import (
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/client/context"
 	"github.com/spf13/cobra"
-	"muse/x/muse/types"
+	"muse/x/copy/types"
 	"github.com/cosmos/cosmos-sdk/codec"
 )
 func GetQueryCmd(storeKey string, cdc *codec.Codec) *cobra.Command {
 	museQueryCmd := &cobra.Command{
 		Use:                        types.ModuleName,
-		Short:                      "Querying commands for the muse module",
+		Short:                      "Querying commands for the copyright module",
 		DisableFlagParsing:         true,
 		SuggestionsMinimumDistance: 2,
 		RunE:                       client.ValidateCmd,
@@ -23,7 +23,7 @@ func GetQueryCmd(storeKey string, cdc *codec.Codec) *cobra.Command {
 }
 func GetCmdLyric(queryRoute string, cdc *codec.Codec) *cobra.Command {
 	return &cobra.Command{
-		Use: "lyric [lyricCode]",
+		Use: "lyric [bciCode]",
 		Short: "query lyric",
 		Args:  cobra.ExactArgs(1),
 		RunE: func(cmd *cobra.Command, args []string) error {

@@ -2,10 +2,10 @@ package muse
 
 import (
 	"fmt"
-	"muse/x/muse/keeper"
-	"muse/x/muse/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	abci "github.com/tendermint/tendermint/abci/types"
+	"muse/x/copy/keeper"
+	"muse/x/copy/types"
 )
 
 type GenesisState struct {
@@ -39,7 +39,7 @@ func DefaultGenesisState() GenesisState {
 
 func InitGenesis(ctx sdk.Context, keeper keeper.Keeper, data GenesisState) []abci.ValidatorUpdate {
 	for _, record := range data.LyricRecords {
-		keeper.SetLyric(ctx, record.LyricCode, record)
+		keeper.SetLyric(ctx, record)
 	}
 	return []abci.ValidatorUpdate{}
 }
